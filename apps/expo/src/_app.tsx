@@ -8,7 +8,9 @@ import { SignInSignUpScreen } from "./screens/signin";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { tokenCache } from "./utils/cache";
 import Constants from "expo-constants";
-
+import { Info } from "./screens/info";
+import {NavigationContainer} from '@react-navigation/native';
+import RootNavigator from "./Navigator/RootNavigator";
 export const App = () => {
   return (
     <ClerkProvider
@@ -18,7 +20,9 @@ export const App = () => {
       <SignedIn>
         <TRPCProvider>
           <SafeAreaProvider>
-            <HomeScreen />
+          <NavigationContainer>
+           <RootNavigator/>
+           </NavigationContainer>
             <StatusBar />
           </SafeAreaProvider>
         </TRPCProvider>
