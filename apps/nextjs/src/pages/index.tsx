@@ -6,9 +6,7 @@ import type { AppRouter } from "@acme/api";
 import { useAuth, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
-const PostCard: React.FC<{
-  post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
-}> = ({ post }) => {
+const PostCard = () => {
   return (
     <div className="max-w-2xl rounded-lg border-2 border-gray-500 p-4 transition-all hover:scale-[101%]">
       <h2 className="text-2xl font-bold text-[hsl(280,100%,70%)]">
@@ -20,7 +18,7 @@ const PostCard: React.FC<{
 };
 
 const Home: NextPage = () => {
-  const postQuery = trpc.post.all.useQuery();
+ 
 
   return (
     <>
@@ -37,16 +35,10 @@ const Home: NextPage = () => {
           <AuthShowcase />
 
           <div className="flex h-[60vh] justify-center overflow-y-scroll px-4 text-2xl">
-            {postQuery.data ? (
-              <div className="flex flex-col gap-4">
-                {postQuery.data?.map((p) => {
-                  return <PostCard key={p.id} post={p} />;
-                })}
+           <p>Hello</p>
               </div>
-            ) : (
-              <p>Loading..</p>
-            )}
-          </div>
+           
+       
         </div>
       </main>
     </>
