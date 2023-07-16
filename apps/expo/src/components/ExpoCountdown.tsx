@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const SetComponent = () => {
+const ExpoCountdown = () => {
   return (
     <View>
-      <Text>SetComponent</Text>
+      <Text>ExpoCountdown</Text>
     </View>
   )
 }
 
-export default SetComponent
+export default ExpoCountdown

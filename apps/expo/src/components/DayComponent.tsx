@@ -4,14 +4,25 @@ import SetShowComponent from './SetShowComponent';
 import ExerciseComponent from './ExerciseComponent';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
+
+type set = {
+  exerciseId:number,
+  id:number,
+  name:string,
+  order:number,
+  restTime:string,
+  type:string,
+  volume:string,
+  weight:string
+}
 type exercises={
-    id: number;
-  name: string;
-  type: string;
-  setType: string;
-  order: number;
-  routineId: number;
-  sets: ObjectConstructor[][];
+  id: number;
+name: string;
+type: string;
+setType: string|null;
+order: number;
+routineId: number;
+sets:set[];
 }
 type props={
     id:number,
@@ -28,6 +39,7 @@ const DayComponent = ({id,weekRoutine,exercises,order}:props) => {
     const route = useRoute();
     const cRoute = route.name;
     console.log("HOMOMOOMO" +cRoute)
+
     const uniqueArray: exercises[] = exercises.filter((obj, index, self) =>
     index === self.findIndex((item) => item.name === obj.name)
   );
@@ -56,8 +68,12 @@ const DayComponent = ({id,weekRoutine,exercises,order}:props) => {
           ))}
         </View>
         :expanded && cRoute === "Specific"?<View>
+          
           {exercises.map(({id,name,sets,order,setType})=>(
+            <View> 
+              <Text>{name}</Text>
             <SetShowComponent key={id}  id={id}name={name} sets={sets} order={order} setType={setType} />
+            </View>
           ))}
         </View>:null
 
