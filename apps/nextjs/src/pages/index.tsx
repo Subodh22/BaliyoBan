@@ -12,9 +12,9 @@ const PostCard: React.FC<{
   return (
     <div className="max-w-2xl rounded-lg border-2 border-gray-500 p-4 transition-all hover:scale-[101%]">
       <h2 className="text-2xl font-bold text-[hsl(280,100%,70%)]">
-        {post.title}
+       Human
       </h2>
-      <p>{post.content}</p>
+      <p>GetOO</p>
     </div>
   );
 };
