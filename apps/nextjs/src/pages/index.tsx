@@ -8,7 +8,7 @@ import Link from "next/link";
 
  
 const Home: NextPage = () => {
-   
+  
 
   return (
     <>
@@ -21,12 +21,11 @@ const Home: NextPage = () => {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-8">
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
             Create <span className="text-[hsl(280,100%,70%)]">T3</span> Turbo
-            MOTHER FUCKER
           </h1>
           <AuthShowcase />
 
           <div className="flex h-[60vh] justify-center overflow-y-scroll px-4 text-2xl">
-             
+            
           </div>
         </div>
       </main>
@@ -38,8 +37,7 @@ export default Home;
 
 const AuthShowcase: React.FC = () => {
   const { isSignedIn } = useAuth();
-  
-
+ 
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       {isSignedIn && (
