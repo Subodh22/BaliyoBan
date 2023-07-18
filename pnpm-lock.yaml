@@ -83,6 +83,9 @@ importers:
       '@react-native-community/datetimepicker':
         specifier: ^7.1.0
         version: 7.1.0
+      '@react-native-picker/picker':
+        specifier: ^2.4.10
+        version: 2.4.10(react-native@0.70.5)(react@18.2.0)
       '@react-navigation/bottom-tabs':
         specifier: ^6.5.7
         version: 6.5.7(@react-navigation/native@6.1.6)(react-native-safe-area-context@4.4.1)(react-native-screens@3.22.1)(react-native@0.70.5)(react@18.2.0)
